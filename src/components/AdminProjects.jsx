@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../config";
 
 const AdminProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -10,7 +11,7 @@ const AdminProjects = () => {
   });
 
   const loadProjects = async () => {
-    const res = await axios.get("http://localhost:5000/api/projects");
+    const res = await axios.get(`${API_URL}/api/projects`);
     setProjects(res.data);
   };
 
@@ -20,13 +21,13 @@ const AdminProjects = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:5000/api/projects/admin", form);
+    await axios.post(`${API_URL}/api/projects/admin`, form);
     setForm({ title: "", description: "", image: "" });
     loadProjects();
   };
 
   const deleteProject = async (id) => {
-    await axios.delete(`http://localhost:5000/api/projects/admin/${id}`);
+    await axios.delete(`${API_URL}/api/projects/admin/${id}`);
     loadProjects();
   };
 

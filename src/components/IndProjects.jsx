@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../config";
 import "./IndProjects.css";
 
 const IndProjects = () => {
@@ -14,7 +15,7 @@ const IndProjects = () => {
         setLoading(true);
         // Sirf featured projects fetch karne ke liye query param pass kiya hai
         const res = await axios.get(
-          `http://localhost:5000/api/projects?featured=true&t=${Date.now()}`
+          `${API_URL}/api/projects?featured=true&t=${Date.now()}`
         );
         setProjects(res.data);
       } catch (err) {

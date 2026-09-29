@@ -50,12 +50,13 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../config";
 
 const MyCreation = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/projects2")
+    axios.get(`${API_URL}/api/projects2`)
       .then(res => setProjects(res.data))
       .catch(err => console.log("Error fetching designs:", err));
   }, []);

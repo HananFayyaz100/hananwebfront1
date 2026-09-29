@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../config";
 import "./Dashboard.css";
 
-const API_BASE_URL = "http://localhost:5000/api/projects";
+const API_BASE_URL = `${API_URL}/api/projects`;
 
 const Dashboard = () => {
   const [projects, setProjects] = useState([]);

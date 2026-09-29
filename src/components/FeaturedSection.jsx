@@ -255,6 +255,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../config";
 import "./FeacherdSection.css";
 
 const FeaturedSection = () => {
@@ -267,7 +268,7 @@ const FeaturedSection = () => {
       try {
         // Cache busting ke sath API request taaki dashboard ke updates immediately dikhein
         const response = await axios.get(
-          `http://localhost:5000/api/projects?featured=true&limit=3&t=${Date.now()}`
+          `${API_URL}/api/projects?featured=true&limit=3&t=${Date.now()}`
         );
         setFeaturedProjects(response.data);
       } catch (err) {
