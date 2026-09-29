@@ -1,0 +1,1071 @@
+/* =========================================================
+   LUXURY FEATURED PROJECTS
+   Black + Gold Premium Theme
+========================================================= */
+
+:root {
+  --bg-dark: #080808;
+  --bg-secondary: #0d0d0d;
+  --card-bg: #111111;
+
+  --gold-accent: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-dark: #9c7c19;
+
+  --white: #ffffff;
+  --text-primary: #f5f5f5;
+  --text-secondary: #999999;
+  --text-muted: #666666;
+
+  --border: rgba(212, 175, 55, 0.18);
+  --border-hover: rgba(212, 175, 55, 0.65);
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.luxury-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 120px 30px 110px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(212, 175, 55, 0.07),
+      transparent 38%
+    ),
+    linear-gradient(
+      180deg,
+      #080808 0%,
+      #0a0a0a 50%,
+      #080808 100%
+    );
+
+  color: var(--white);
+
+  font-family:
+    "Cinzel",
+    Georgia,
+    serif;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.luxury-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.045);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  animation: floatingGlow 8s ease-in-out infinite;
+}
+
+.luxury-glow-one {
+  top: 5%;
+  left: -300px;
+}
+
+.luxury-glow-two {
+  right: -300px;
+  bottom: 5%;
+
+  animation-delay: -4s;
+}
+
+
+@keyframes floatingGlow {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-35px) scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header {
+  position: relative;
+
+  max-width: 760px;
+
+  margin: 0 auto 65px;
+
+  text-align: center;
+
+  animation: headerReveal 0.9s ease both;
+}
+
+
+@keyframes headerReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Eyebrow */
+
+.section-eyebrow {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+
+  color: var(--gold-accent);
+
+  font-size: 0.7rem;
+
+  letter-spacing: 4px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-weight: 600;
+}
+
+
+.eyebrow-line {
+  width: 32px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold-accent)
+    );
+}
+
+
+.eyebrow-line:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold-accent),
+      transparent
+    );
+}
+
+
+/* Title */
+
+.section-title {
+  margin: 0 0 20px;
+
+  color: var(--white);
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+
+  letter-spacing: 1px;
+}
+
+
+.section-title span {
+  color: var(--gold-accent);
+
+  font-style: italic;
+}
+
+
+/* Description */
+
+.section-description {
+  max-width: 600px;
+
+  margin: 0 auto;
+
+  color: var(--text-secondary);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.98rem;
+
+  line-height: 1.8;
+
+  font-weight: 300;
+}
+
+
+/* =========================================================
+   CARDS GRID
+========================================================= */
+
+.cards-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+
+  width: 100%;
+
+  max-width: 1280px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.luxury-card {
+  position: relative;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(255, 255, 255, 0.008)
+    ),
+    var(--card-bg);
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+
+  transform: translateY(40px);
+
+  opacity: 0;
+
+  animation:
+    cardReveal 0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  animation-delay: var(--card-delay);
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+
+@keyframes cardReveal {
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Card hover */
+
+.luxury-card:hover {
+  transform: translateY(-14px);
+
+  border-color: var(--border-hover);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.6),
+    0 10px 35px rgba(212, 175, 55, 0.08);
+}
+
+
+/* Top gold line */
+
+.luxury-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+
+  width: 80%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold-accent),
+      transparent
+    );
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.6s ease;
+
+  z-index: 5;
+}
+
+
+.luxury-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.card-number {
+  position: absolute;
+
+  top: 15px;
+  right: 17px;
+
+  z-index: 5;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 2px;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.luxury-card:hover .card-number {
+  color: var(--gold-accent);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.card-image-box {
+  position: relative;
+
+  width: 100%;
+
+  height: 270px;
+
+  overflow: hidden;
+
+  background: #0a0a0a;
+}
+
+
+.card-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  filter:
+    saturate(0.85)
+    contrast(1.05);
+
+  transform: scale(1.01);
+
+  transition:
+    transform 1s
+      cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s ease;
+}
+
+
+.luxury-card:hover .card-image {
+  transform: scale(1.1);
+
+  filter:
+    saturate(1.05)
+    contrast(1.08);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05) 0%,
+      transparent 35%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE SHINE
+========================================================= */
+
+.image-shine {
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 60%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      105deg,
+      transparent 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      transparent 80%
+    );
+
+  transform: skewX(-20deg);
+
+  pointer-events: none;
+
+  transition:
+    left 0.9s
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.luxury-card:hover .image-shine {
+  left: 140%;
+}
+
+
+/* =========================================================
+   LIVE PROJECT BADGE
+========================================================= */
+
+.preview-badge {
+  position: absolute;
+
+  left: 18px;
+  bottom: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 7px 11px;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  backdrop-filter: blur(10px);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 100px;
+
+  color: #eeeeee;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 1.5px;
+}
+
+
+.preview-badge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--gold-accent);
+
+  box-shadow:
+    0 0 10px var(--gold-accent);
+
+  animation:
+    livePulse 1.7s ease-in-out infinite;
+}
+
+
+@keyframes livePulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.7);
+  }
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.card-body {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 28px 27px 24px;
+}
+
+
+/* Project label */
+
+.project-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--gold-accent);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.6rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.card-title {
+  margin: 0 0 13px;
+
+  color: var(--text-primary);
+
+  font-size: 1.25rem;
+
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  letter-spacing: 0.3px;
+
+  transition:
+    color 0.35s ease;
+}
+
+
+.luxury-card:hover .card-title {
+  color: var(--gold-light);
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.card-text {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.86rem;
+
+  line-height: 1.75;
+
+  font-weight: 300;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.card-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-top: 25px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+
+/* Project number */
+
+.project-index {
+  color: var(--text-muted);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.55rem;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   VIEW PROJECT
+========================================================= */
+
+.live-preview-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--gold-accent);
+
+  text-decoration: none;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.7rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.live-preview-link:hover {
+  color: var(--gold-light);
+}
+
+
+/* Arrow circle */
+
+.arrow-circle {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 31px;
+  height: 31px;
+
+  border:
+    1px solid
+    rgba(212, 175, 55, 0.35);
+
+  border-radius: 50%;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+.arrow {
+  font-size: 1rem;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.live-preview-link:hover .arrow-circle {
+  background: var(--gold-accent);
+
+  border-color: var(--gold-accent);
+
+  transform: rotate(8deg);
+}
+
+
+.live-preview-link:hover .arrow {
+  color: #080808;
+
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   SHOW MORE SECTION
+========================================================= */
+
+.show-more-wrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-top: 65px;
+}
+
+
+/* Button */
+
+.show-more-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  min-width: 230px;
+
+  padding: 16px 20px;
+
+  overflow: hidden;
+
+  color: var(--gold-accent);
+
+  text-decoration: none;
+
+  border:
+    1px solid
+    rgba(212, 175, 55, 0.45);
+
+  background: transparent;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.show-more-btn::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: var(--gold-accent);
+
+  transform:
+    translateX(-101%);
+
+  transition:
+    transform 0.45s
+      cubic-bezier(0.77, 0, 0.175, 1);
+
+  z-index: -1;
+}
+
+
+.show-more-btn:hover::before {
+  transform: translateX(0);
+}
+
+
+.show-more-btn:hover {
+  color: #080808;
+
+  border-color: var(--gold-accent);
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(212, 175, 55, 0.16);
+}
+
+
+/* Button arrow */
+
+.btn-arrow {
+  font-size: 1.15rem;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+.show-more-btn:hover .btn-arrow {
+  transform: translateX(6px);
+}
+
+
+/* Count */
+
+.projects-count {
+  margin: 14px 0 0;
+
+  color: #555555;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.55rem;
+
+  letter-spacing: 2px;
+}
+
+
+.projects-count span {
+  color: var(--gold-accent);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .luxury-section {
+    padding: 100px 25px;
+  }
+
+  .cards-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .luxury-card:last-child {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 680px) {
+
+  .luxury-section {
+    padding: 80px 18px;
+  }
+
+
+  .section-header {
+    margin-bottom: 45px;
+  }
+
+
+  .section-eyebrow {
+    font-size: 0.58rem;
+
+    letter-spacing: 3px;
+  }
+
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+
+
+  .section-description {
+    font-size: 0.88rem;
+
+    line-height: 1.7;
+  }
+
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+
+  .luxury-card:last-child {
+    display: flex;
+  }
+
+
+  .card-image-box {
+    height: 235px;
+  }
+
+
+  .card-body {
+    padding: 24px 21px 21px;
+  }
+
+
+  .card-title {
+    font-size: 1.15rem;
+  }
+
+
+  .card-text {
+    font-size: 0.83rem;
+  }
+
+
+  .card-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .live-preview-link {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+
+  .show-more-wrapper {
+    margin-top: 45px;
+  }
+
+
+  .show-more-btn {
+    width: 100%;
+
+    max-width: 300px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .luxury-card,
+  .section-header,
+  .luxury-glow {
+    animation: none;
+  }
+
+  .luxury-card {
+    opacity: 1;
+
+    transform: none;
+  }
+
+  .luxury-card:hover {
+    transform: none;
+  }
+
+  .card-image,
+  .image-shine,
+  .show-more-btn,
+  .arrow-circle {
+    transition: none;
+  }
+
+}

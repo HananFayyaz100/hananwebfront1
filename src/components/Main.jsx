@@ -200,6 +200,7 @@
 
 import React from 'react'
 import hananpic from "./images/hanan_1.png";
+import Typewriter from 'typewriter-effect';
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion';
 
@@ -235,10 +236,19 @@ function Main() {
             <h1 className='text-[40px] md:text-[60px] lg:text-[70px] text-white font-extrabold font-mono leading-tight'>
               Hanan Fayyaz 
             </h1>
-            <span className='text-[24px] md:text-[30px] text-white font-bold'>A Creative </span>
-            <span className='inline-block text-[24px] md:text-[30px] text-yellow-400 font-extrabold drop-shadow-[0_0_15px_rgba(245,230,5,0.8)]'>
-              Web Developer
-            </span>
+            <span className='text-[24px] md:text-[30px] text-white font-bold'>
+        A Creative{' '}
+      </span>
+      <span className='inline-block text-[24px] md:text-[30px] text-yellow-400 font-extrabold drop-shadow-[0_0_15px_rgba(245,230,5,0.8)]'>
+        <Typewriter
+          options={{
+            strings: ['Software Developer', 'Backend Developer', 'Frontend Developer'],
+            autoStart: true,
+            loop: true,
+            deleteSpeed: 50,
+          }}
+        />
+      </span>
           </motion.div>
 
           <motion.p variants={fadeInUp} className='text-white text-[14px] md:text-[16px] font-bold leading-relaxed max-w-xl mx-auto lg:mx-0'>

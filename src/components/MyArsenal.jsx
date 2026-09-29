@@ -90,11 +90,92 @@
 
 
 
+// import React from 'react'
+// import { DiGit, DiBootstrap, DiExtjs, DiHtml5, DiCss3, DiJsBadge, DiReact, DiPython, DiNodejs, DiDjango } from 'react-icons/di'
+
+// const MyArsenal = () => {
+//   // Skills data array taake code clean rahe aur maintain karna asaan ho
+//   const skills = [
+//     { name: "HTML5", icon: <DiHtml5 />, level: "98%" },
+//     { name: "CSS3", icon: <DiCss3 />, level: "88%" },
+//     { name: "JS", icon: <DiJsBadge />, level: "90%" },
+//     { name: "ReactJs", icon: <DiReact />, level: "89%" },
+//     { name: "NodeJS", icon: <DiNodejs />, level: "80%" },
+//     { name: "Python", icon: <DiPython />, level: "75%" },
+//     { name: "Django", icon: <DiDjango />, level: "50%" },
+//     { name: "Git/Github", icon: <DiGit />, level: "80%" },
+//     { name: "Bootstrap", icon: <DiBootstrap />, level: "82%" },
+//     { name: "Express JS", icon: <DiExtjs />, level: "87%" },
+//   ];
+
+//   return (
+//     <div className='text-center p-4 min-h-screen flex flex-col justify-center'>
+//       <span className='font-arial text-gray-400 text-lg tracking-widest'>MY ARSENAL</span><br />
+//       <h2 className='text-yellow-500 text-4xl md:text-6xl lg:text-7xl font-semibold'>Technical Skills</h2>
+      
+//       {/* Grid Settings:
+//           grid-cols-1: Mobile par 1 column
+//           sm:grid-cols-2: Tablet par 2 columns
+//           md:grid-cols-3: Chote laptops par 3 columns
+//           lg:grid-cols-5: Bari screen par 5 columns
+//       */}
+//       <div className='w-[90vw] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 h-auto mx-auto p-4 mt-10'>
+        
+//         {skills.map((skill, index) => (
+//           <div 
+//             key={index} 
+//             className='group cursor-pointer transition-all duration-300 ease-in-out hover:translate-y-[-10px] hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] rounded-xl min-h-[180px] flex flex-col p-6 items-center border border-yellow-300 bg-black/20'
+//           >
+//             <div className='text-yellow-300 text-6xl mb-4 transition-transform duration-300 group-hover:scale-110'>
+//               {skill.icon}
+//             </div>
+            
+//             <span className='font-bold text-xl text-white mb-4'>{skill.name}</span>
+            
+//             {/* Progress Bar Container */}
+//             <div className='w-full h-[8px] bg-gray-700 rounded-full overflow-hidden'>
+//               <div 
+//                 className='bg-yellow-300 h-full rounded-full transition-all duration-1000' 
+//                 style={{ width: skill.level }}
+//               ></div>
+//             </div>
+//             <span className='text-yellow-300 text-xs mt-2 font-mono'>{skill.level}</span>
+//           </div>
+//         ))}
+        
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default MyArsenal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React from 'react'
 import { DiGit, DiBootstrap, DiExtjs, DiHtml5, DiCss3, DiJsBadge, DiReact, DiPython, DiNodejs, DiDjango } from 'react-icons/di'
 
 const MyArsenal = () => {
-  // Skills data array taake code clean rahe aur maintain karna asaan ho
   const skills = [
     { name: "HTML5", icon: <DiHtml5 />, level: "98%" },
     { name: "CSS3", icon: <DiCss3 />, level: "88%" },
@@ -109,22 +190,15 @@ const MyArsenal = () => {
   ];
 
   return (
-    <div className='text-center p-4 min-h-screen flex flex-col justify-center'>
+    <div className='text-center p-4 min-h-screen flex flex-col justify-center bg-black text-white'>
       <span className='font-arial text-gray-400 text-lg tracking-widest'>MY ARSENAL</span><br />
       <h2 className='text-yellow-500 text-4xl md:text-6xl lg:text-7xl font-semibold'>Technical Skills</h2>
       
-      {/* Grid Settings:
-          grid-cols-1: Mobile par 1 column
-          sm:grid-cols-2: Tablet par 2 columns
-          md:grid-cols-3: Chote laptops par 3 columns
-          lg:grid-cols-5: Bari screen par 5 columns
-      */}
       <div className='w-[90vw] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 h-auto mx-auto p-4 mt-10'>
-        
         {skills.map((skill, index) => (
           <div 
             key={index} 
-            className='group cursor-pointer transition-all duration-300 ease-in-out hover:translate-y-[-10px] hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] rounded-xl min-h-[180px] flex flex-col p-6 items-center border border-yellow-300 bg-black/20'
+            className='group cursor-pointer transition-all duration-300 ease-in-out hover:translate-y-[-10px] hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] rounded-xl min-h-[180px] flex flex-col p-6 items-center border border-yellow-300/40 hover:border-yellow-300 bg-black/20'
           >
             <div className='text-yellow-300 text-6xl mb-4 transition-transform duration-300 group-hover:scale-110'>
               {skill.icon}
@@ -133,16 +207,18 @@ const MyArsenal = () => {
             <span className='font-bold text-xl text-white mb-4'>{skill.name}</span>
             
             {/* Progress Bar Container */}
-            <div className='w-full h-[8px] bg-gray-700 rounded-full overflow-hidden'>
+            <div className='w-full h-[8px] bg-gray-800 rounded-full overflow-hidden p-[1px]'>
               <div 
-                className='bg-yellow-300 h-full rounded-full transition-all duration-1000' 
-                style={{ width: skill.level }}
+                className='bg-yellow-300 h-full rounded-full transition-all duration-700 ease-out w-0 group-hover:w-[var(--target-width)] opacity-30 group-hover:opacity-100' 
+                style={{ '--target-width': skill.level }}
               ></div>
             </div>
-            <span className='text-yellow-300 text-xs mt-2 font-mono'>{skill.level}</span>
+
+            <span className='text-yellow-300 text-xs mt-2 font-mono opacity-60 group-hover:opacity-100 transition-opacity duration-300'>
+              {skill.level}
+            </span>
           </div>
         ))}
-        
       </div>
     </div>
   )
